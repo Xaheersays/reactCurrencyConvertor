@@ -6,17 +6,22 @@ function App() {
 
   return (
     <>
-    <div className='flex   min-w-max  w-100 h-100 justify-center items-center' >
-      <form action="">
+    {/* main body div */}
+      <div className='w-full bg-slate-900 h-[100vh] p-2 flex flex-col items-center justify-center'>
+        {/* for centring content and blur */}
+        <div className='flex flex-col items-center  justify-center  border-white  border border-gray-60 rounded-lg  bg-white/30  max-w-4xl  w-full pt-10 pb-10' > 
 
-      <div  className='bg-white p-4 rounded-lg shadow-lg ddrop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] '>
-        <InputComp />
-        <button className='bg-sky-700 p-4 rounded-2xl hover:bg-sky-600 hover:outline-2 ' style={{margin:-10}}>swap</button>
-        <InputComp />
-        <button type='submit' className='bg-sky-700 p-4 rounded-2xl hover:bg-sky-600 mt-4'>Convert</button>
+          
+
+            <InputComp/>
+            <button className='bg-sky-700 hover:bg-sky-600 p-4 text-white rounded-lg z-10 border-2 border-gray-400' style={{margin:-10}}>Swap</button>
+            <InputComp/>
+            <button className='bg-sky-700 p-4 w-44 rounded-lg text-white hover:bg-sky-600 mt-10 shadow-lg font-semibold'>CONVERT</button>
+
+
+        </div>
       </div>
-      </form>
-    </div>
+  
     </>
 
   )

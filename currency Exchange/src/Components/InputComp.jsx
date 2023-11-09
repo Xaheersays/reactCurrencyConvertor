@@ -1,22 +1,22 @@
 import { useId } from "react"
 
-const InputComp = (currencyOptions = [],label)=>{
+const InputComp = (currencyOptions = [], label) => {
     label = "from"
     const inputID = useId();
     const selectID = useId();
     return (
         <>
-        <div className="bg-gray-400 p-5 flex justify-between gap-44 rounded-lg"> 
-            <div className="flex flex-col items-start gap-2">
-                <label className="text-2xl  text-gray-700" htmlFor={inputID}>{label.toUpperCase()}</label>
-                <input className="p-2 text-black focus:outline-none" type="number" id={inputID}
-                
+        <div className="bg-gray-200  flex justify-between  rounded-lg text-sm md:text-2xl 
+        items-center p-4 gap-3 text-black border-2 " >
+            <div className="flex flex-col items-start  justify-between ">
+                <label className="mb-2  " htmlFor={inputID}>{label.toUpperCase()}</label>
+                <input className="p-2 text-black focus:outline-none rounded-lg" type="number" id={inputID}
+
                 />
             </div>
-
-            <div className="flex flex-col items-start gap-2 opacity-100">
-                <label className="text-2xl font-light text-slate-700" htmlFor={selectID}>CURRENCY TYPE</label>
-                <select id={selectID} className="text-black">
+            <div className="flex flex-col items-start  justify-between ">
+                <label className=" font-light  mb-2" htmlFor={selectID}>CURRENCY </label>
+                <select id={selectID} className="text-black p-2 rounded-lg text-sm md:text-2xl">
                     <option value="1">zaheer</option>
                     <option value="1">zaheer</option>
                     <option value="1">zaheer</option>

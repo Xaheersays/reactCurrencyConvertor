@@ -3,10 +3,10 @@ import './App.css'
 import InputComp from './Components/InputComp'
 import FetchData  from './Hooks/FetchData';
 function App() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
   const [from,setFrom] = useState("usd");
   const [to,setTo] = useState("inr")
-  const [convertedAmount,setConvertedAmount]=useState(0)
+  const [convertedAmount,setConvertedAmount]=useState('')
 
   const data = FetchData(from)
   const options = Object.keys(data)
@@ -22,12 +22,7 @@ function App() {
       setConvertedAmount(amount*data[to])
   }
 
-  const onCurrencyChange =(currency)=>{
-    setAmount(amount)
-    console.log(currency)
-  }
-
-
+ 
 
 
   return (
@@ -42,13 +37,14 @@ function App() {
             <InputComp 
             label="From"
             currencyTypes={options}
-            amount={amount}
-            onCurrencyChange={onCurrencyChange}
+            onCurrencyChange={(currency)=>setFrom(currency)}
             onAmountChange={(amount)=>setAmount(amount)}
             selectCurrency = {from}
+            amount={amount}
+            message = {"enter amount"}
             
             />
-            <button className='bg-sky-700 hover:bg-sky-600 p-4 text-white rounded-lg z-10 border-2 border-gray-400' style={{margin:-10}}
+            <button className='bg-sky-700 hover:bg-sky-600 p-4 text-white rounded-lg z-10 border-2 border-gray-400  font-semibold' style={{margin:-10}}
             onClick={swap}
             >Swap</button>
             <InputComp label="To"
@@ -56,6 +52,9 @@ function App() {
             onCurrencyChange={(currency)=>setTo(currency)}
             selectCurrency={to}
             amount={convertedAmount}
+            message = {"results"}
+            disabled = {true}
+            bg_color  = {'white'}
 
              />
             <button className='bg-sky-700 p-4 w-44 rounded-lg text-white hover:bg-sky-600 mt-10 shadow-lg font-semibold' onClick={Convert}>CONVERT {from} - {to}</button>

@@ -6,7 +6,10 @@ const InputComp = (
         onAmountChange,
         onCurrencyChange,
         selectCurrency = "usd",
-        currencyTypes = []
+        currencyTypes = [],
+        message,
+        disabled,
+        bg_color = 'white'
 
 }
 ) => {
@@ -22,8 +25,10 @@ const InputComp = (
                 <label className="mb-2  " htmlFor={inputID}>{label.toUpperCase()}</label>
                 <input className="p-2 text-black focus:outline-none rounded-lg" type="number" id={inputID}
                 value={amount}
-                placeholder="enter amount"
+                placeholder={message}
                 onChange={(e)=>onAmountChange?.(Number(e.target.value))}
+                disabled ={disabled}
+                style={{background:bg_color}}
                 
                 />
             </div>
